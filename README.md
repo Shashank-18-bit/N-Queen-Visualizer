@@ -12,3 +12,5 @@ User Input: Users can input the desired board size (N) to experiment with the N-
 Algorithm Animation: The visualization includes an algorithm animation, enabling users to see how the N-Queens problem is solved using a backtracking or any other applicable algorithm.
 
 Solution Highlighting: The application highlights the valid placements of queens on the board, making it easy for users to identify the safe positions.
+
+     [Live Demo](https://teal-n-queen-viusalizer.netlify.app/)
