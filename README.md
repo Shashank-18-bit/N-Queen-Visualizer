@@ -13,4 +13,5 @@ Algorithm Animation: The visualization includes an algorithm animation, enabling
 
 Solution Highlighting: The application highlights the valid placements of queens on the board, making it easy for users to identify the safe positions.
 
-     [Live Demo](https://teal-n-queen-viusalizer.netlify.app/)
+     Live Demo
+     https://teal-n-queen-viusalizer.netlify.app/
