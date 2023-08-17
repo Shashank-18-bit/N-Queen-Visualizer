@@ -141,7 +141,7 @@ class Queen {
             await q.delay();
             // console.log("outside:" + board);
             await q.clearColor(board);
-            if (await q.isValid(board, r, i, n)) {
+            if (await q.isValid(board, r, i, n)) { // Checks if placing a queen at the current row r and column i is valid (i.e., no conflicts with other queens).
                 await q.delay();
                 // console.log("inside:" + board)
                 await q.clearColor(board);
@@ -151,7 +151,8 @@ class Queen {
 
                 this.position[board][r] = i;
 
-                if (await q.solveQueen(board, r + 1, n))
+                if (await q.solveQueen(board, r + 1, n)) // Recursively calls q.solveQueen(board, r + 1, n) to place queens in the next row, and clears the cell colors afterward.
+
                     await q.clearColor(board);
 
                 await q.delay();
