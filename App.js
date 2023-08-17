@@ -36,10 +36,10 @@ class Queen {
 
     nQueen = async () => {
         Board = 0;
-        this.position[`${Board}`] = {};
-        numberbox.disabled = true;
+        this.position[`${Board}`] = {}; // This object might be used to keep track of the positions of queens on the board.
+        numberbox.disabled = true; // used to prevent user input while the N-Queens problem is being solved
         await q.solveQueen(Board, 0, n);
-        await q.clearColor(Board);
+        await q.clearColor(Board);  //  used for  clearing colors or visual markers on the chessboard.
         numberbox.disabled = false;
     }
 
@@ -55,12 +55,16 @@ class Queen {
         // Checking the queen in the same column
         for (let i = r - 1; i >= 0; --i) {
             const row = table.firstChild.childNodes[i];
-            const column = row.getElementsByTagName("td")[col];
+            const column = row.getElementsByTagName("td")[col]; // This line retrieves the col-th column cell from the i-th row. 
+            //It's accessing a specific cell (square) on the chessboard.
+
+
 
             const value = column.innerHTML;
-
+                // If conflict is detected
             if (value == queen) {
-                column.style.backgroundColor = "#FB5607";
+                column.style.backgroundColor = "#FB5607";// Changes the background color of the conflicting cell 
+                //to a specific color (likely indicating a conflict).
                 currentColumn.innerHTML = "-"
                 return false;
             }
@@ -102,11 +106,16 @@ class Queen {
     }
 
     clearColor = async (board) => {
-        for (let j = 0; j < n; ++j) {
+        for (let j = 0; j < n; ++j) { // This outer loop iterates over rows  on the chessboard. 
             const table = document.getElementById(`table-${this.uuid[board]}`);
             const row = table.firstChild.childNodes[j];
-            for (let k = 0; k < n; ++k)
-                (j + k) & 1
+            for (let k = 0; k < n; ++k)  // This inner loop iterates over cells  within the current row.
+
+
+                (j + k) & 1 // expression checks if the sum of j and k is odd or even. 
+                    // If the sum is odd, it sets the background color of the cell to #FF9F1C, and if it's even, it sets the background color to #FCCD90.
+
+
                     ? (row.getElementsByTagName("td")[k].style.backgroundColor = "#FF9F1C")
                     : (row.getElementsByTagName("td")[k].style.backgroundColor = "#FCCD90");
         }
